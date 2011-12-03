@@ -30,6 +30,12 @@ casper.then(function(self){
 	}, "Expecting Dead cell");
 });
 
+casper.then(function(self){
+	self.test.assertEvalEquals(function(){
+		return Grid.getAdjacents(document.querySelector("#grid tr:nth-child(2) td:nth-child(4)")).length;
+	}, 8, "Expecting 8 adjacent cells");
+});
+
 casper.run(function(self){
 	self.exit();
 });
