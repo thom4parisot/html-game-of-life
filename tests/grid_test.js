@@ -21,9 +21,15 @@ casper.then(function(self){
 });
 
 casper.then(function(self){
+	var Grid = self.getGlobal("Grid");
+
 	self.test.assertEval(function(){
-		return Grid.isCellAlive(document.querySelector("#grid tr:nth-child(2) td:nth-child(3)"));
+		return Grid.isCellAlive(document.querySelector("#grid tr:nth-child(2) td:nth-child(4)")) === true;
 	}, "Expecting Living cell");
+
+	self.test.assertEval(function(){
+		return Grid.isCellAlive(document.querySelector("#grid tr:nth-child(2) td:nth-child(3)")) === false;
+	}, "Expecting Dead cell");
 });
 
 casper.run(function(self){
