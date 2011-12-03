@@ -1,4 +1,4 @@
-phantom.injectJs("../lib/casper/casper.js");
+phantom.injectJs("../lib/casperjs/casper.js");
 
 var casper = new phantom.Casper();
 
@@ -21,9 +21,6 @@ casper.then(function(self){
 });
 
 casper.then(function(self){
-	self.evaluate(function(){
-		self.echo(Grid.isCellAlive(document.querySelector("#grid tr:nth-child(2) td:nth-child(4)")) ? 1 : 0);
-	});
 	self.test.assertEval(function(){
 		return Grid.isCellAlive(document.querySelector("#grid tr:nth-child(2) td:nth-child(3)"));
 	}, "Expecting Living cell");

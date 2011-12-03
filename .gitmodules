@@ -1,0 +1,3 @@
+[submodule "lib/casperjs"]
+	path = lib/casperjs
+	url = https://github.com/n1k0/casperjs.git
