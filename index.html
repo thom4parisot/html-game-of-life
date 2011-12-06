@@ -595,6 +595,26 @@
     </div>
 
   </div>
+<script src="https://raw.github.com/oncletom/html-game-of-life/master/lib/grid.js"></script>
+<script>;(function(d, undefined){
+  var GridInstance = new Grid(d.getElementById('gameoflife')),
+      AnimateGameButton = d.getElementById('animate-game'),
+      ResetButton = d.getElementById('reset-game'),
+      TimerId;
 
+  AnimateGameButton.addEventListener('click', function(e){
+    if (TimerId === null)
+    {
+      TimerId = setInterval(function StateTimer(){
+        GridInstance.nextState();
+      }, 1000);
+    }
+    else
+    {
+      clearInterval(TimerId);
+      TimerId = null;
+    }
+  });
+})(document);</script>
 </body>
 </html>
