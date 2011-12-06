@@ -566,7 +566,7 @@
     </table>
       
       <div class="actions commands">
-        <button type="button" id="animate-game" data-alttext="Pause">Play</button>
+        <button type="button" id="animate-game" data-pause-text="Pause" data-play-text="Play">Play</button>
         <button type="button" id="reset-game" disabled>Reset</button>
       </div>
     </div>
@@ -608,11 +608,13 @@
       TimerId = setInterval(function StateTimer(){
         GridInstance.nextState();
       }, 1000);
+      AnimateGameButton.innerText = AnimateGameButton.dataset.pauseText;
     }
     else
     {
       clearInterval(TimerId);
       TimerId = null;
+      AnimateGameButton.innerText = AnimateGameButton.dataset.playText;
     }
   });
 })(document);</script>
