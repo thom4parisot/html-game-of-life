@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset='utf-8'>
 
@@ -8,7 +8,7 @@
   <style type="text/css">
     body {
       margin-top: 1.0em;
-      background-color: #d9df98;
+      background-color: #f0f0f0;
       font-family: Helvetica, Arial, FreeSans, san-serif;
       color: #000000;
     }
@@ -16,17 +16,41 @@
       margin: 0 auto;
       width: 700px;
     }
-    h1 { font-size: 3.8em; color: #262067; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
+    h1 { font-size: 3.8em; color: #333; margin-bottom: 3px; }
+    h1 .small { font-size: 0.4em; line-height: 2em; }
+    h1 .small, h1 abbr{ vertical-align: top; }
     h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #262067; }
-    h3 { text-align: center; color: #262067; }
-    a { color: #262067; }
+    h2 { font-size: 1.5em; color: #333; }
+    h3 { text-align: center; color: #333; }
+    a, a:link, a:visited { color: #333; text-decoration: none; border-bottom: 2px solid #ccc; }
+    a:hover{ background: #ffc; border-color: #000;}
     .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
     .download { float: right; }
+    .download a{ border: none; }
     pre { background: #000; color: #fff; padding: 15px;}
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
     .footer { text-align:center; padding-top:30px; font-style: italic; }
+
+    #example{
+      margin: 3em 0;
+    }
+
+    #gameoflife{
+      border-spacing: 1px;
+      margin: 0 auto;
+    }
+    #gameoflife td{
+      border: 0;
+      height: 10px;
+      padding: 0;
+      width: 6px;
+    }
+    #gameoflife:hover td{
+      background: #fff;
+    }
+    #gameoflife .alive{
+      background: #ccc !important;
+    }
   </style>
 </head>
 
@@ -42,30 +66,528 @@
         <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
     </div>
 
-    <h1><a href="https://github.com/oncletom/html-game-of-life">html-game-of-life</a>
-      <span class="small">by <a href="https://github.com/oncletom">oncletom</a></span></h1>
+    <h1><a href="https://github.com/oncletom/html-game-of-life">Game of Life</a><br />
+      <span class="small">Playing with <abbr title="HyperText Markup Language">HTML</abbr> and <abbr title="Document Object Model">DOM</abbr>.</span></h1>
 
     <div class="description">
-      
+      <p>This is a real life example of <a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life">Conway's Game of Life</a>, built during the <a href="http://coderetreat.org/events/global-day-of-coderetreat-bordeaux-france">2011's Global Day of Code Retreat in Bordeaux</a>.</p>
     </div>
 
-    
+    <p>I bet using HTML, JavaScript and DOM was one of the <strong>easiest</strong> way to achieve the goal, both <strong>programmatically</strong> and <strong>visually</strong>.</p>
 
-    
-
-    
-
-    
-
-    
-      <h2>Authors</h2>
-      <p>oncletom (thomas@oncle-tom.net)<br/>      </p>
-    
-
-    
-      <h2>Contact</h2>
-      <p>Oncle Tom (thomas@oncle-tom.net)<br/>      </p>
-    
+    <div id="example"><table id="gameoflife">
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td class="alive"></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td class="alive"></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+      
+      <div class="actions commands">
+        <button type="button" id="animate-game" data-alttext="Pause">Play</button>
+        <button type="button" id="reset-game" disabled>Reset</button>
+      </div>
+    </div>
+  
+    <h2>Thanks To</h2>
+    <ul>
+      <li>Okiwi and Arpinum for the Code Retreat organization and experience;</li>
+      <li>Alexis Monville for his pragmatic support during the session;</li>
+      <li><a href="https://github.com/n1k0">Nicolas Perriault</a> for his CasperJS – used for functional testing;</li>
+      <li><a href="https://github.com/jeanphix">Jean-Philippe Serafin</a> for his help on a Webkit issue.</li>
+    </ul>
 
     <h2>Download</h2>
     <p>
