@@ -636,14 +636,14 @@
       TimerId = setInterval(function StateTimer(){
         GridInstance.nextState();
       }, 1000);
-      AnimateGameButton.innerText = AnimateGameButton.dataset.pauseText;
+      AnimateGameButton.innerHTML = AnimateGameButton.dataset.pauseText;
       //ResetButton.removeAttribute('disabled');
     }
     else
     {
       clearInterval(TimerId);
       TimerId = null;
-      AnimateGameButton.innerText = AnimateGameButton.dataset.playText;
+      AnimateGameButton.innerHTML = AnimateGameButton.dataset.playText;
     }
   });
 })(document);</script>
