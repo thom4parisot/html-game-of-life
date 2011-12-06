@@ -3,9 +3,7 @@ phantom.injectJs("../lib/casperjs/casper.js");
 var casper = new phantom.Casper({loglevel: "debug", verbose: true});
 
 casper.start("grid.html", function(self){
-	self.test.assertEval(function(){
-		return document.querySelector("#grid") ? true : false;
-	}, "Expecting a table with id as 'grid'.");
+	self.test.assertExists("#grid", "Expecting a table with id as 'grid'.");
 });
 
 casper.then(function(self){
@@ -22,11 +20,11 @@ casper.then(function(self){
 
 casper.then(function(self){
 	self.test.assertEval(function(){
-		return Grid.isCellAlive(document.querySelector("#grid tr:nth-child(2) td:nth-child(4)")) === true;
+		return GridInstance.isCellAlive(document.querySelector("#grid tr:nth-child(2) td:nth-child(4)")) === true;
 	}, "Expecting Living cell");
 
 	self.test.assertEval(function(){
-		return Grid.isCellAlive(document.querySelector("#grid tr:nth-child(2) td:nth-child(3)")) === false;
+		return GridInstance.isCellAlive(document.querySelector("#grid tr:nth-child(2) td:nth-child(3)")) === false;
 	}, "Expecting Dead cell");
 });
 
@@ -37,11 +35,11 @@ casper.then(function(self){
 	self.echo("Working on cell (2,4) which is alive.", "COMMENT");
 
 	self.test.assertEvalEquals(function(){
-		return Grid.getAdjacents(document.querySelector("#grid tr:nth-child(2) td:nth-child(4)")).length;
+		return GridInstance.getAdjacents(document.querySelector("#grid tr:nth-child(2) td:nth-child(4)")).length;
 	}, 8, "Expecting 8 adjacent cells");
 
 	self.test.assertEvalEquals(function(){
-		return Grid.getAdjacents(document.querySelector("#grid tr:nth-child(2) td:nth-child(4)"), Grid.isCellAlive).length;
+		return GridInstance.getAdjacents(document.querySelector("#grid tr:nth-child(2) td:nth-child(4)"), GridInstance.isCellAlive).length;
 	}, 2, "Expecting 2 alive adjacent cells");
 });
 
@@ -52,19 +50,19 @@ casper.then(function(self){
 	self.echo("Next Grid State.", "COMMENT");
 
 	self.evaluate(function(){
-		Grid.nextState();
+		GridInstance.nextState();
 	});
 
 	self.test.assertEvalEquals(function(){
-		return Grid.getAdjacents(document.querySelector("#grid tr:nth-child(2) td:nth-child(4)"), Grid.isCellAlive).length;
+		return GridInstance.getAdjacents(document.querySelector("#grid tr:nth-child(2) td:nth-child(4)"), GridInstance.isCellAlive).length;
 	}, 3, "Expecting now 3 alive adjacent cells");
 
 	self.test.assertEval(function(){
-		return Grid.isCellAlive(document.querySelector("#grid tr:nth-child(3) td:nth-child(5)")) === true;
+		return GridInstance.isCellAlive(document.querySelector("#grid tr:nth-child(3) td:nth-child(5)")) === true;
 	}, "Next diagonal cell is now alive.");
 
 	self.test.assertEval(function(){
-		return Grid.isCellAlive(document.querySelector("#grid tr:nth-child(9) td:nth-child(6)")) === false;
+		return GridInstance.isCellAlive(document.querySelector("#grid tr:nth-child(9) td:nth-child(6)")) === false;
 	}, "Alone cell should have died.");
 });
 
