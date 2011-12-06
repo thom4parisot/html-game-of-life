@@ -9,7 +9,7 @@
     body {
       margin-top: 1.0em;
       background-color: #f0f0f0;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
+      font-family: Helvetica, Arial, FreeSans, sans-serif;
       color: #000000;
     }
     #container {
@@ -49,6 +49,34 @@
     #gameoflife .alive{
       background: #ccc !important;
     }
+
+    .commands{
+      margin: 1.5em 0;
+      text-align: center;
+    }
+      .commands button{
+        background: #555;
+        border: 0;
+        border-bottom: 1px solid rgba(0,0,0,0.25);
+        -moz-border-radius: 16px; 
+        -webkit-border-radius: 16px;
+        -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        color: #fff;
+        cursor: pointer;
+        font-family: 'Helvetica Neue', Arial, Helvetica, Verdana, sans-serif;
+        font-size: 1.1em;
+        font-weight: bold;
+        padding: 8px 20px 9px;
+        position: relative;
+        text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+      }
+      .commands button:hover{
+        background: #000;
+      }
+      .commands button:active{
+        top: 1px;
+      }
   </style>
 </head>
 
