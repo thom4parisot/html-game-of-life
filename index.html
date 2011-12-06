@@ -567,7 +567,7 @@
       
       <div class="actions commands">
         <button type="button" id="animate-game" data-pause-text="Pause" data-play-text="Play">Play</button>
-        <button type="button" id="reset-game" disabled>Reset</button>
+        <!-- <button type="button" id="reset-game" disabled>Reset</button> -->
       </div>
     </div>
   
@@ -597,10 +597,10 @@
   </div>
 <script src="https://raw.github.com/oncletom/html-game-of-life/master/lib/grid.js"></script>
 <script>;(function(d, undefined){
-  var GridInstance = new Grid(d.getElementById('gameoflife')),
+  var GridElement = d.getElementById('gameoflife'),
+      GridInstance = new Grid(GridElement),
       AnimateGameButton = d.getElementById('animate-game'),
-      ResetButton = d.getElementById('reset-game'),
-      TimerId;
+      TimerId = null;
 
   AnimateGameButton.addEventListener('click', function(e){
     if (TimerId === null)
@@ -609,6 +609,7 @@
         GridInstance.nextState();
       }, 1000);
       AnimateGameButton.innerText = AnimateGameButton.dataset.pauseText;
+      ResetButton.removeAttribute('disabled');
     }
     else
     {
