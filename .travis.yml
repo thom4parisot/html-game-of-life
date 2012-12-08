@@ -1,4 +1,6 @@
+language: node
+node_js:
+  - 0.8
 before_install:
   - git clone git://github.com/n1k0/casperjs.git
-after_script:
-  - NODE_ENV=test casperjs/bin/casperjs test tests/
+script: casperjs/bin/casperjs test tests/
